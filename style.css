@@ -1,0 +1,41 @@
+body{
+    padding: 25px;
+  }
+  .title {
+      color: #5C6AC4;
+  }
+  td {
+    text-align: center;
+    border: 1px solid black;
+    height: 100px;
+    width: 5.55%;
+  }
+  table {
+    width: 100%;
+  }
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .nazev{
+    font-size: 20px;
+  }
+  .pCislo{
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .znacka{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .hmotnost{
+    font-size: 15px;
+  }
+
+  .blank{
+    border: none;
+  }
+  #mezera{
+    height: 15px;
+  }

@@ -1,6 +1,10 @@
 import csv
 import json
 import hledani
+from os import remove
+import os.path
+import webbrowser
+import tabulka
 
 
 def load_json_elements(json_file):
@@ -23,7 +27,8 @@ def vyber():
     print("1: Vyhledavani prvku")
     print("2: Periodicka tabulka")
     print("3: Vypocet")
-    print("4: Vypnout program")
+    print("4: Vypis skupiny prvku")
+    print("5: Vypnout program")
 
 
 def main():
@@ -32,6 +37,7 @@ def main():
 
     while True:
         vyber()
+
         volba = input("Zadej svou volbu: ")
         if volba == "1":
             prvek = input("Zadej prvek, který chceš vyhledat: ")
@@ -39,10 +45,19 @@ def main():
             if vyskyt:
                 hledani.vypis_samotneho_prvku(vyskyt, elements)
         elif volba == "2":
-            print("neni dodelano")
+            tabulka.tabulka(elements)
+            path = os.path.abspath("index.html")
+            url = "file://" + path
+            webbrowser.open(url)
         elif volba == "3":
             print("neni dodelano")
         elif volba == "4":
+            VolbaSkupiny = input("zadej nazev skupiny: ")
+            vyskyt = hledani.vypis_skupin(VolbaSkupiny, groups)
+            if vyskyt:
+                print(vyskyt)
+        elif volba == "5":
+            remove("index.html")
             break
 
 
